@@ -1,0 +1,24 @@
+# 字符串的处理
+from gettext import find
+
+str = "hello"
+print(str)
+print(type(str))
+
+# 有个相应的三引号(支持换行，其实就是支持转移字符) 其实就是简化代码的书写,这里就直接单引号 套用双引号 或者双引号套用单引号
+# 字符串有个相应的分片操作 什么意思呢 ？就是[0:] 取所有 或者[0:i] 取相应的位置的字符串
+
+# 字符串重复出现 '-'*100 打印100个'-
+# 字符串格式化
+#  %s 占位符字符串  %d占位符 整形
+s = 'hello %s word %d' % ('你好', 2)
+print(s)
+
+# 字符串的各种处理
+strName = "hello word python is good"
+# 1.查找,这里返回的是第一个单词的角标
+a = strName.find("word")
+print(a)  # 这里打印的是角标
+print(strName[a:])  # 这里是为了验证角标的正确性，其实当然是正确的
+# find()可以设置相应的角标
+print(strName.find())

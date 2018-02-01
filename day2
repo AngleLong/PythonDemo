@@ -1,0 +1,103 @@
+# 第二天
+
+# 三目运算符 写法 真值if条件else假值
+# a = int(input('a='))
+# b = int(input('b='))
+# print('a大于b') if (a > b) else print('a小于b')
+
+# 输入n个数 计算平均值
+# n = 0
+# sum = 0
+# while True:
+#     i = input(">>>")
+#     if i == 'quit':
+#         break
+#     n += 1
+#     sum += int(i)
+#     avg = sum / n
+#     print(avg)
+
+
+# 9 9 乘法表
+from builtins import input
+
+for i in range(1, 10):  # 不包含后面的数字
+    for j in range(1, i + 1):
+        print(i, 'x', j, '=', i * j, end='\t\t')  # 正常后面是'\n' 但是如果你加上end并且在内部提供相应的制表符的话,那么会替换相应的'\n'
+    print()
+
+
+# format的使用 '{0}*{1}={2:<2}'.format(j,i,i*j)
+# '{}*{}={:<2}'.format(j,i,i*j)
+
+
+# python 中的函数的写法 这里只要注意相应的写法就可以了,主要看好不需要相应的变量类型
+# 这里要注意 函数后面要有冒号
+
+def add(x, y):
+    z = x + y
+    return z
+
+
+sum = add(2, 4)
+print(sum)
+
+
+# 函数内部存在全局变量的时候,全局变量会失效 编译器直接就会检验的
+# def sum():
+#     print(num)
+#     num = 3
+#     print(num)
+#
+# num = 10
+# sum()
+# print(num)
+
+
+# 在函数体中要是想修改全局变量要是用关键字global 但是这个只是起到一个标明的作用,标明之后要想修改要在后一行执行
+# 开发的时候尽量少写一些全局的变量
+
+def sum1():
+    global name
+    name = 10
+    print(name)
+
+
+name = 4
+print(name)
+sum1()
+print(name)
+
+# 逻辑语句
+# if 语句
+# if 条件判断:
+# elif 条件判断:
+# else条件判断:
+
+# while语句
+# while 条件判断:
+#           执行语句
+
+
+# a = input() 这个是用户输入内容的
+
+
+# for循环
+for item in "hello":
+    print(item)
+
+# for循环和while循环后面都可以接else 这个是python特有的,什么逻辑呢?
+# 当for循环或者while循环正常执行结束的时候就会执行else中的代码,如果中间break跳出了,那么就不会执行相应的else了
+
+# 列表(这里类型可以不一样) list [1,2,3,4]
+#   del可以删除其中的一项
+#   pop 弹出一个元素 ;
+#   append 追加一个元素
+#   len 获取相应的长度
+#   列表可以直接用"+"号进行拼接
+#   列表可以直接用"*"号进行复制
+#   [0:4] 可以取出列表的前4项，这里你要是项从第几项开始的话前面就换成相应的数字
+#   还有一些api在手机的图片里面
+# 元祖 tuple  这里用的是小括号  (1,2,3,4)  区别 元祖不允许修改但是列表是可以修改的
+# 字典 dictionary 用{}表示类似于json 键值对的形式
+# 其实就是基本的内容进行处理 这里可以查看相应的API

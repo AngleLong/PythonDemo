@@ -1,0 +1,21 @@
+# 这是看见极客学院模拟微博登陆的内容
+
+import requests
+from lxml import etree
+
+cook = {
+    "Cookie": "_T_WM=df4565c2f9d9f04be40a126f3ad713a1; SUB=_2A253bzUYDeRhGeBP7lcS9i_PyDuIHXVUkFtQrDV6PUJbkdANLWHGkW1NRVJkg5ALp3Jqxn_Roj1XnOpZHU8Hvcy6; SUHB=0laFTw3lYB8xRi; SCF=AktO7toT6aDl2NVTTEtwVfwRyZSfDlp8OPjBX62Iz3KCcGtSeHV9RbrUOZyNY2ra4Z-Ku8wfvPjZgXo41CfTC5Q.; SSOLoginState=1516979528"}
+url = 'https://weibo.cn/6155361337'
+html = requests.get(url).content  # 这个就相当于一个Get请求
+# html = requests.get(url).text
+# html = bytes(bytearray(html, "utf-8"))
+html = requests.get(url, cookies=cook).content
+
+select = etree.HTML(html)
+
+content = select.xpath('span[@class="ctt"]')
+for each in content:
+    text = each.xpath('string(.)')
+    b = 1
+    print(text)
+# print(html)
